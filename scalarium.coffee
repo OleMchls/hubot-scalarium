@@ -1,6 +1,6 @@
 # Interact with Scalarium cloud hosting
 #
-# The following variables are optional
+# The following variables are requiered
 #   HUBOT_SCALARIUM_TOKEN: for authenticating the requests (see https://manage.scalarium.com/users/<user-id>/api)
 #
 # hubot scalarium list (apps|clouds) - Lists all applications/clouds on scalarium.
