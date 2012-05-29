@@ -73,7 +73,8 @@ module.exports = (robot)->
     client.deploy message.match[1], message.match[2], (deploy) ->
       message.send "Yes Sir! Deployment triggered with id #{deploy.id}. Will drop a note when it's done."
     , (finished) ->
-      message.send """#{if finished.successful then 'Success' else 'FAIL! FAIL! FAIL!!'}! Your deployment "#{finished.comment}" with id #{finished.id} #{if finished.successful then 'is done' else 'failed'}."""
+      success = finished.status == 'successful'
+      message.send """#{if success then 'Success' else 'FAIL! FAIL! FAIL!!'}! Your deployment "#{finished.comment}" with id #{finished.id} #{if success then 'is done' else 'failed'}."""
 
   robot.scalarium =
     getApplications: client.getApplications
